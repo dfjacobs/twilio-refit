@@ -13,6 +13,7 @@
 1. This package only contains the methods needed for my projects, implemented for the latest versions of .Net and .Net Core.  The methods I use haven't changed in years, unlike the twilio-csharp package, which is updated every few weeks with new methods for Twilio products I'm not currently using.
 2. This package splits the API into separate components, I can just include the interfaces I need for a particular project.
 3. It does not use a single static HttpClient for all API calls, which makes it much easier to write unit tests.</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
