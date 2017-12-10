@@ -7,8 +7,8 @@ namespace Twilio.Tests
 {
     public class AuthorizationUnitTest
     {
-        readonly string accountSid = "ACxxxxxxxxxxxxxx";
-        readonly string authToken = "TestAuthTokenValue";
+        private readonly string accountSid = "ACxxxxxxxxxxxxxx";
+        private readonly string authToken = "TestAuthTokenValue";
 
         [Fact]
         public void CreatesBasicAuthenticationHeader()
