@@ -9,8 +9,8 @@ namespace Twilio.Tests
 {
     public class LookupsTest
     {
-        private const string ACCOUNTSID = "TWILIO_ACCOUNTSID_LOOKUPS";
-        private const string AUTHTOKEN = "TWILIO_AUTHTOKEN_LOOKUPS";
+        private const string ACCOUNTSID = "TWILIO_ACCOUNTSID";
+        private const string AUTHTOKEN = "TWILIO_AUTHTOKEN";
 
         private readonly ITwilioLookupsApi api;
         private readonly ITestOutputHelper testOutput;
@@ -27,7 +27,7 @@ namespace Twilio.Tests
 
             var lookupsClient = new HttpClient
             {
-                BaseAddress = new Uri("https://lookups.twilio.com"),
+                BaseAddress = new Uri("https://lookups.twilio.com/v1"),
                 DefaultRequestHeaders = { Authorization = twilioAuthentication.AuthorizationHeader }
             };
             api = RestService.For<ITwilioLookupsApi>(lookupsClient);

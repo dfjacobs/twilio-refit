@@ -11,8 +11,8 @@ namespace Twilio.Tests
 {
     public class MessagingTest
     {
-        private const string ACCOUNTSID = "TWILIO_ACCOUNTSID";
-        private const string AUTHTOKEN = "TWILIO_AUTHTOKEN";
+        private const string ACCOUNTSID = "TWILIO_ACCOUNTSID_TEST";
+        private const string AUTHTOKEN = "TWILIO_AUTHTOKEN_TEST";
         private const string PHONENUMBER = "TWILIO_PHONENUMBER";
 
         private readonly ITwilioMessagingApi api;

@@ -6,9 +6,9 @@ namespace Twilio
 {
     public interface ITwilioLookupsApi
     {
-        // Base Uri - https://lookups.twilio.com
+        // Base Uri - https://lookups.twilio.com/v1
 
-        [Get("/v1/PhoneNumbers/{PhoneNumber}")]
+        [Get("/PhoneNumbers/{PhoneNumber}")]
         Task<JObject> NumberInfo(string PhoneNumber, string CountryCode, string Type);
     }
 }
