@@ -85,5 +85,4 @@ authentication header and creates Refit implementations of each of the API inter
             SmsNumber = smsNumber ?? throw new ArgumentNullException(nameof(smsNumber));
         }
     }
-
 ```
