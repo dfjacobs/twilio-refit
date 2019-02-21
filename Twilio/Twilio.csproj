@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
     <PackageId>Twilio.Refit</PackageId>
     <Authors>Darryl Jacobs</Authors>
     <Company>South Shore Software, LLC</Company>
@@ -24,4 +24,8 @@
     <PackageReference Include="Refit" Version="4.6.90" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <Reference Include="System.Web" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
 </Project>
