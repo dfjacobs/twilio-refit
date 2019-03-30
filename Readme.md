@@ -86,3 +86,34 @@ authentication header and creates Refit implementations of each of the API inter
         }
     }
 ```
+
+### Unit and Integration Tests
+
+The tests included in the project are written to retrieve the Twilio API credentials and phone numbers from the environment.
+The [DotNetEnv](https://github.com/tonerdo/dotnet-env) NuGet package is used to load the environment variables from a .env file.
+
+The included interface tests would be considered integration tests instead of unit tests.
+When modifying the provided interfaces or adding new ones, you should create tests to verify that the interface is defined correctly.
+
+For integration testing, you should create a new Twilio project at https://www.twilio.com.
+The project will have the API credentials you need to run the integration tests.
+Twilio allows you to create multiple API keys, you should use a different API keys for testing and production.
+Twilio projects define phone numbers and credentials for Messaging API testing, see https://www.twilio.com/console/phone-numbers/runtime/test-credentials.
+Other Twilio APIs will need valid API credentials for any integration tests. 
+Create a .env file containing the API keys used for integration testing.
+Do not check in any .env files that contain API credentials! You do not want to publish .env files to public repositories! 
+
+The keys that need to be defined in the .env file for running the included integration tests:
+```
+TWILIO_ACCOUNTSID_TEST=Replace with the project's test AccountSID
+TWILIO_AUTHTOKEN_TEST=Replace with the project's test AuthToken
+TWILIO_PHONENUMBER=+15005550006
+TWILIO_ACCOUNTSID=Replace with a valid AccountSID for testing the Lookup API
+TWILIO_AUTHTOKEN=Replace with a valid AuthToken for testing the Lookup API
+```  
+
+### Limitations
+
+The project creates libraries for .Net Standard 2.0 and .Net Framework 4.6.1.
+ 
+There is no support for TwiML.  
