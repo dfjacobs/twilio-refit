@@ -95,10 +95,10 @@ The [DotNetEnv](https://github.com/tonerdo/dotnet-env) NuGet package is used to 
 The included interface tests would be considered integration tests instead of unit tests.
 When modifying the provided interfaces or adding new ones, you should create tests to verify that the interface is defined correctly.
 
-For integration testing, you should create a new Twilio project at https://www.twilio.com.
+For integration testing, you should create a new Twilio project at <https://www.twilio.com>.
 The project will have the API credentials you need to run the integration tests.
 Twilio allows you to create multiple API keys, you should use a different API keys for testing and production.
-Twilio projects define phone numbers and credentials for Messaging API testing, see https://www.twilio.com/console/phone-numbers/runtime/test-credentials.
+Twilio projects define phone numbers and credentials for Messaging API testing, see <https://www.twilio.com/console/phone-numbers/runtime/test-credentials>.
 Other Twilio APIs will need valid API credentials for any integration tests. 
 Create a .env file containing the API keys used for integration testing.
 Do not check in any .env files that contain API credentials! You do not want to publish .env files to public repositories! 
