@@ -22,6 +22,8 @@
   <ItemGroup Condition=" '$(OS)' != 'Windows_NT' AND '$(TargetFramework)' == 'net461' ">
     <PackageReference Include="Microsoft.TargetingPack.NETFramework.v4.6.1" Version="1.0.1"
             ExcludeAssets="All" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
