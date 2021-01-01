@@ -13,9 +13,9 @@
 1. This package only contains the methods needed for my projects, implemented for the latest versions of .Net and .Net Core.  The methods I use haven't changed in years, unlike the twilio-csharp package, which is updated every few weeks with new methods for Twilio products I'm not currently using.
 2. This package splits the API into separate components, I can just include the interfaces I need for a particular project.
 3. It does not use a single static HttpClient for all API calls, which makes it much easier to write unit tests.</PackageReleaseNotes>
-    <Version>3.0.3</Version>
-    <AssemblyVersion>3.0.3.0</AssemblyVersion>
-    <FileVersion>3.0.3.0</FileVersion>
+    <Version>3.0.4</Version>
+    <AssemblyVersion>3.0.4.0</AssemblyVersion>
+    <FileVersion>3.0.4.0</FileVersion>
     <Copyright>Copyright © 2020</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>http://github.com/dfjacobs/twilio-refit</PackageProjectUrl>
@@ -24,11 +24,12 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Refit" Version="5.1.67" />
+    <PackageReference Include="Refit" Version="5.2.4" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
     <Reference Include="System.Web" />
     <Reference Include="System.Net.Http" />
+    <PackageReference Include="System.Net.Http" Version="4.3.1" />
   </ItemGroup>
 </Project>
