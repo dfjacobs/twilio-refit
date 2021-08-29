@@ -14,6 +14,20 @@ I found that this adds code bloat, and makes keeping the external nuget packages
 The Refit implementation also makes testing a lot simpler.  Each Twilio service is represented by an interface.
 These interfaces make it easy to replace calls to Twilio with calls to a test component.
 
+### Changes
+
+Version 4 of the project is built on Refit 6. Since Refit 6 defaults to using the [System.Text.Json](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-overview) 
+JOSN serializer introduced in .Net Core 3.1, I decided to migrate the project to the same serializer. This required a change to the API interfaces.
+The [Newtonsoft.Json.Linq.Jobject](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm) class has been replaced with the 
+[System.Text.Jsom.JsonElement](https://docs.microsoft.com/en-us/dotnet/api/system.text.json.jsonelement?view=net-5.0) struct. Both classes represent 
+generic JSON entities, however JsonElement cannot currently be assigned to a dynamic C# variable. Microsoft may add this capability to System.Text.Json
+sometime in the future.
+
+If support for Json.Net is desired, use version 3.1.1 of the project. That version uses Json.Net, and you can use the API interfaces from that version 
+with Refit 6. Refit 6 can be configured to use Json.Net in place of System.Text.Json.
+
+Version 4 still supports .Net Standard 2.0 and .Net Framework 4.6.1.
+
 ### Usage
 
 The project is made up of interfaces representing each Twilio API endpoint, and a class that creates the basic authentication header required to make a REST request to Twilio.

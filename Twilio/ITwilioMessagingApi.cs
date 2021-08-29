@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
 using Refit;
 
 namespace Twilio
@@ -10,6 +10,6 @@ namespace Twilio
         // Base Uri - https://api.twilio.com
 
         [Post("/2010-04-01/Accounts/{AccountSid}/Messages.json")]
-        Task<JObject> SendSMS(string AccountSid, [Body(BodySerializationMethod.UrlEncoded)] Dictionary<string,string> parameters);
+        Task<JsonElement> SendSMS(string AccountSid, [Body(BodySerializationMethod.UrlEncoded)] Dictionary<string,string> parameters);
     }
 }

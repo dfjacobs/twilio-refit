@@ -38,8 +38,8 @@ namespace Twilio.Tests
         {
             try
             {
-                dynamic response = await api.NumberInfo("+17202950840", "US", "carrier");
-                Assert.Equal("mobile", (string)response.carrier.type);
+                var response = await api.NumberInfo("+17202950840", "US", "carrier");
+                Assert.Equal("mobile", response.GetProperty("carrier").GetProperty("type").GetString());
             }
             catch (ApiException ex)
             {

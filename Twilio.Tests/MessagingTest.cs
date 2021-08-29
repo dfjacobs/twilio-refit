@@ -54,10 +54,10 @@ namespace Twilio.Tests
                     {"From", fromNumber},
                     {"Body", "Test message"}
                 };
-                dynamic response = await api.SendSMS(accountSid, parameters);
+                var response = await api.SendSMS(accountSid, parameters);
 
-                Assert.Equal(accountSid, (string)response.account_sid);
-                Assert.Equal("queued", (string)response.status);
+                Assert.Equal(accountSid, response.GetProperty("account_sid").GetString());
+                Assert.Equal("queued", response.GetProperty("status").GetString());
             }
             catch (ApiException ex)
             {

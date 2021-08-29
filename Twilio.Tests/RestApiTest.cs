@@ -53,10 +53,10 @@ namespace Twilio.Tests
                     {"From", fromNumber},
                     {"Body", "Test message"}
                 };
-                dynamic response = await api.SendSMS(accountSid, parameters);
+                var response = await api.SendSMS(accountSid, parameters);
 
-                Assert.Equal(accountSid, (string)response.account_sid);
-                Assert.Equal("queued", (string)response.status);
+                Assert.Equal(accountSid, response.GetProperty("account_sid").GetString());
+                Assert.Equal("queued", response.GetProperty("status").GetString());
             }
             catch (ApiException ex)
             {
@@ -122,10 +122,10 @@ namespace Twilio.Tests
             {
                 {"PhoneNumber", "+15005550006"}
             };
-            dynamic response = await api.PurchasePhoneNumber(accountSid, parameters);
+            var response = await api.PurchasePhoneNumber(accountSid, parameters);
 
-            Assert.Equal(accountSid, (string)response.account_sid);
-            Assert.Equal("+15005550006", (string)response.phone_number);
+            Assert.Equal(accountSid, response.GetProperty("account_sid").GetString());
+            Assert.Equal("+15005550006", response.GetProperty("phone_number").GetString());
         }
 
         [Theory]
@@ -153,10 +153,10 @@ namespace Twilio.Tests
             {
                 {"AreaCode", "500"}
             };
-            dynamic response = await api.PurchasePhoneNumber(accountSid, parameters);
+            var response = await api.PurchasePhoneNumber(accountSid, parameters);
 
-            Assert.Equal(accountSid, (string)response.account_sid);
-            Assert.Equal("+15005550006", (string)response.phone_number);
+            Assert.Equal(accountSid, response.GetProperty("account_sid").GetString());
+            Assert.Equal("+15005550006", response.GetProperty("phone_number").GetString());
         }
 
         [Fact]
