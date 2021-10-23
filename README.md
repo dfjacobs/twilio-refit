@@ -17,8 +17,8 @@ These interfaces make it easy to replace calls to Twilio with calls to a test co
 ### Changes
 
 Version 4 of the project is built on Refit 6. Since Refit 6 defaults to using the [System.Text.Json](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-overview) 
-JOSN serializer introduced in .Net Core 3.1, I decided to migrate the project to the same serializer. This required a change to the API interfaces.
-The [Newtonsoft.Json.Linq.Jobject](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm) class has been replaced with the 
+JSON serializer introduced in .Net Core 3.1, I decided to migrate the project to the same serializer. This required a change to the API interfaces.
+The [Newtonsoft.Json.Linq.JObject](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm) class has been replaced with the 
 [System.Text.Jsom.JsonElement](https://docs.microsoft.com/en-us/dotnet/api/system.text.json.jsonelement?view=net-5.0) struct. Both classes represent 
 generic JSON entities, however JsonElement cannot currently be assigned to a dynamic C# variable. Microsoft may add this capability to System.Text.Json
 sometime in the future.
