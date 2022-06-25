@@ -26,7 +26,7 @@ sometime in the future.
 If support for Json.Net is desired, use version 3.1.1 of the project. That version uses Json.Net, and you can use the API interfaces from that version 
 with Refit 6. Refit 6 can be configured to use Json.Net in place of System.Text.Json.
 
-Version 4 still supports .Net Standard 2.0 and .Net Framework 4.6.1.
+Version 4 still supports .Net Standard 2.0 and .Net Framework 4.6.2.
 
 ### Usage
 
@@ -128,6 +128,6 @@ TWILIO_AUTHTOKEN=Replace with a valid AuthToken for testing the Lookup API
 
 ### Limitations
 
-The project creates libraries for .Net Standard 2.0 and .Net Framework 4.6.1.
+The project creates libraries for .Net Standard 2.0 and .Net Framework 4.6.2.
  
 There is no support for TwiML.  

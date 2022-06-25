@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
     <PackageId>Twilio.Refit</PackageId>
     <Authors>Darryl Jacobs</Authors>
     <Company>South Shore Software, LLC</Company>
@@ -13,21 +13,16 @@
 1. This package only contains the methods needed for my projects, implemented for the latest versions of .Net and .Net Core.  The methods I use haven't changed in years, unlike the twilio-csharp package, which is updated every few weeks with new methods for Twilio products I'm not currently using.
 2. This package splits the API into separate components, I can just include the interfaces I need for a particular project.
 3. It does not use a single static HttpClient for all API calls, which makes it much easier to write unit tests.</PackageReleaseNotes>
-    <Version>4.0.1</Version>
-    <AssemblyVersion>4.0.1.0</AssemblyVersion>
-    <FileVersion>4.0.1.0</FileVersion>
-    <Copyright>Copyright © 2021</Copyright>
+    <Version>4.1.0</Version>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <FileVersion>4.1.0.0</FileVersion>
+    <Copyright>Copyright © 2022</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>http://github.com/dfjacobs/twilio-refit</PackageProjectUrl>
     <RepositoryUrl>http://github.com/dfjacobs/twilio-refit</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Refit" Version="6.1.15" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
-    <Reference Include="System.Web" />
-    <Reference Include="System.Net.Http" />
+    <PackageReference Include="Refit" Version="6.3.2" />
   </ItemGroup>
 </Project>
