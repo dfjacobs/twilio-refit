@@ -16,6 +16,8 @@ These interfaces make it easy to replace calls to Twilio with calls to a test co
 
 ### Changes
 
+Version 4.1 has been updated to Refit 6.3.2. It also removes the obsolete [Twilio Fax API](https://support.twilio.com/hc/en-us/articles/223136667-Fax-Support-on-Twilio).
+
 Version 4 of the project is built on Refit 6. Since Refit 6 defaults to using the [System.Text.Json](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-overview) 
 JSON serializer introduced in .Net Core 3.1, I decided to migrate the project to the same serializer. This required a change to the API interfaces.
 The [Newtonsoft.Json.Linq.JObject](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm) class has been replaced with the 
